@@ -78,7 +78,7 @@ class TestRegistration():
         cardDetails=CardDetailsPage(driver)
         #cardDetails.wait_for_card_page_to_load()
         driver.switch_to.frame(0)
-        #cardDetails.get_adyen_card_number().clear()
+        cardDetails.get_adyen_card_number().clear()
         cardDetails.get_adyen_card_number().send_keys(utils.CreditCard)
         driver.switch_to.default_content()
         driver.switch_to.frame(1)
