@@ -1,5 +1,6 @@
 
 import pytest
+#import logging as log
 from selenium.webdriver.common.keys import Keys
 
 from pages.home_page import HomePage
@@ -17,6 +18,8 @@ from utils import utils as utils
 import random
 import string
 
+#log.basicConfig()
+
 
 @pytest.mark.usefixtures("test_setup")
 class TestRegistration():
@@ -32,6 +35,7 @@ class TestRegistration():
         driver.get(utils.URL)
         home = HomePage(driver)
         home.wait_for_home_page_to_load()
+        #log.info("Inside testing")
         home.get_free_for_14_days_button().click()
 
     def test_clickToShowSub(self):
